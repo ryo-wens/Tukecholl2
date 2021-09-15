@@ -1,6 +1,6 @@
 name: Storybook Deploy
 on:
-  pullrequest:
+  pull_request:
     branches:
       main
 
