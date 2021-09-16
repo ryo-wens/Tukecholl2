@@ -1,17 +1,16 @@
 name: Storybook Deploy
 on:
-  pull_request:
   push:
     branches:
       - main
 
 jobs:
   storybook-deployment:
+    name: storybook-deploy
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
-
       - name: Install dependencies
         run: yarn
 
