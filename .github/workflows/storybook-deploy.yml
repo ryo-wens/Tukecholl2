@@ -9,17 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-            node-version: 14.x
-
       - name: Install dependencies
         run: yarn install
 
       - name: Publish to Chromatic
-        run: yarn chromatic
+          uses: chromaui/action@v1
 
-      - with:
-         token: ${{ secrets.GITHUB_TOKEN }}
-         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
